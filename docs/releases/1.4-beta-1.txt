@@ -649,7 +649,7 @@ server continues to serve the admin files just like before. Don't hesitate to
 consult the :doc:`static files howto </howto/static-files>` for further
 details.
 
-In case your ``ADMIN_MEDIA_PREFIX`` is set to an specific domain (e.g.
+In case your ``ADMIN_MEDIA_PREFIX`` is set to a specific domain (e.g.
 ``http://media.example.com/admin/``) make sure to also set your
 :setting:`STATIC_URL` setting to the correct URL, for example
 ``http://media.example.com/``.

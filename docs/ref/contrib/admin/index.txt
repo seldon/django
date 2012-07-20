@@ -990,7 +990,7 @@ templates used by the :class:`ModelAdmin` views:
 
     .. versionadded:: 1.4
 
-    The ``get_ordering`` method takes a``request`` as parameter and
+    The ``get_ordering`` method takes a ``request`` as parameter and
     is expected to return a ``list`` or ``tuple`` for ordering similar
     to the :attr:`ordering` attribute. For example::
 
@@ -1125,7 +1125,7 @@ templates used by the :class:`ModelAdmin` views:
                     kwargs["queryset"] = Car.objects.filter(owner=request.user)
                 return super(MyModelAdmin, self).formfield_for_foreignkey(db_field, request, **kwargs)
 
-    This uses the ``HttpRequest`` instance to filter the ``Car`` foreign key
+    This uses the ``HttpRequest`` instance to filter the ``car`` foreign key
     field to only display the cars owned by the ``User`` instance.
 
 .. method:: ModelAdmin.formfield_for_manytomany(self, db_field, request, **kwargs)
@@ -1134,7 +1134,7 @@ templates used by the :class:`ModelAdmin` views:
     ``formfield_for_manytomany`` method can be overridden to change the
     default formfield for a many to many field. For example, if an owner can
     own multiple cars and cars can belong to multiple owners -- a many to
-    many relationship -- you could filter the ``Car`` foreign key field to
+    many relationship -- you could filter the ``cars`` foreign key field to
     only display the cars owned by the ``User``::
 
         class MyModelAdmin(admin.ModelAdmin):
@@ -1213,7 +1213,7 @@ templates used by the :class:`ModelAdmin` views:
 
     .. versionadded:: 1.3
 
-    Returns an instance of the paginator to use for this view. By default,
+    Returns an instance of the paginator to use for the changelist view. By default,
     instantiates an instance of :attr:`paginator`.
 
 Other methods
@@ -1645,9 +1645,9 @@ you have the following models::
 If you want to allow editing and creating ``Image`` instance on the ``Product``
 add/change views you can use ``GenericTabularInline`` or
 ``GenericStackedInline`` (both subclasses of ``GenericInlineModelAdmin``)
-provided by ``django.contrib.contenttypes.generic``, they implement tabular and
+provided by ``django.contrib.contenttypes.generic``. They implement tabular and
 stacked visual layouts for the forms representing the inline objects
-respectively just like their non-generic counterparts and behave just like any
+respectively -- just like their non-generic counterparts -- and behave just like any
 other inline. In your ``admin.py`` for this example app::
 
     from django.contrib import admin
@@ -1687,7 +1687,7 @@ you specified in :setting:`TEMPLATE_DIRS`.
 
 Within this ``admin`` directory, create sub-directories named after your app.
 Within these app subdirectories create sub-directories named after your models.
-Note, that the admin app will lowercase the model name when looking for the
+Note that the admin app will lowercase the model name when looking for the
 directory, so make sure you name the directory in all lowercase if you are
 going to run your app on a case-sensitive filesystem.
 

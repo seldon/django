@@ -710,7 +710,7 @@ are configured and your Web server serves those files correctly. The
 development server continues to serve the admin files just like before. Read
 the :doc:`static files howto </howto/static-files>` for more details.
 
-If your ``ADMIN_MEDIA_PREFIX`` is set to an specific domain (e.g.
+If your ``ADMIN_MEDIA_PREFIX`` is set to a specific domain (e.g.
 ``http://media.example.com/admin/``), make sure to also set your
 :setting:`STATIC_URL` setting to the correct URL -- for example,
 ``http://media.example.com/``.
